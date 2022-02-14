@@ -1,0 +1,14 @@
+#Application Config
+application:
+  listino: 100
+  sconto: 0
+
+# ==============================================================
+# = Actuator Info
+# ==============================================================
+info:
+  assistenza:
+    nome: "Cristian Bulgarelli"
+  nome:
+    nome-app: "PriceArt Web Service - Versione Autenticazione JWT"
+  profilo: "Listino 100 con Sconto"
