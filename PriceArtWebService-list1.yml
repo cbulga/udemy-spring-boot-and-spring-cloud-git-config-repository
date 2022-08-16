@@ -1,7 +1,6 @@
 #Application Config
 application:
-  listino: 100
-  sconto: 0
+  listino: 1
 
 # ================================================================
 # = Actuator Parameters
@@ -21,9 +20,9 @@ management:
       exposure:
         include: health,info,metrics
 
-# ==============================================================
+# ================================================================
 # = Actuator Info
-# ==============================================================
+# ================================================================
 info:
   assistenza:
     nome: Cristian Bulgarelli
@@ -32,4 +31,4 @@ info:
     orario: 8-18
   nome:
     nome-app: PriceArt Web Service - Versione Autenticazione OAUTH2 Keycloak
-  profilo: Listino 100 con Sconto
+  profilo: GitHub

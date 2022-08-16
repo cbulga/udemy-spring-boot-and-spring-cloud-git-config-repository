@@ -3,12 +3,33 @@ application:
   listino: 1
   sconto: 10
 
+# ================================================================
+# = Actuator Parameters
+# ================================================================
+management:
+  info:
+    env:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+  endpoint:
+    health:
+      show-details: WHEN_AUTHORIZED
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
 # ==============================================================
 # = Actuator Info
 # ==============================================================
 info:
   assistenza:
-    nome: "Cristian Bulgarelli"
+    nome: Cristian Bulgarelli
+    mail: cristian.bulgarelli@xantrix.it
+    telefono: 348-12345678
+    orario: 8-18
   nome:
-    nome-app: "PriceArt Web Service - Versione Autenticazione JWT"
-  profilo: "Profilo Standard con Sconto"
+    nome-app: PriceArt Web Service - Versione Autenticazione OAUTH2 Keycloak
+  profilo: Profilo Standard con Sconto
