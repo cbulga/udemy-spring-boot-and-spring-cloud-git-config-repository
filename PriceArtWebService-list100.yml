@@ -1,6 +1,7 @@
 #Application Config
 application:
-  listino: 3
+  listino: 100
+  sconto: 10
 
 # ================================================================
 # = Actuator Parameters
