@@ -1,6 +1,7 @@
 #Application Config
 application:
   listino: 1
+  tipo: 0 #0=tutti, 1=fidelity
 
 # ================================================================
 # = Actuator Parameters

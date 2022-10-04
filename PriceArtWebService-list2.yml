@@ -2,6 +2,7 @@
 application:
   listino: 2
   sconto: 0
+  tipo: 0 #0=tutti, 1=fidelity
 
 # ================================================================
 # = Actuator Parameters
