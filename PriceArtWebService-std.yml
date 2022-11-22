@@ -20,7 +20,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,refresh,bus-refresh
+        include: health,info,metrics,refresh,bus-refresh,hystrix.stream
 
 # ==============================================================
 # = Actuator Info
