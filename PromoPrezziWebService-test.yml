@@ -1,0 +1,28 @@
+# ==============================================================
+# = Actuator Parameters
+# ==============================================================
+management:
+  info:
+    env:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+  endpoint:
+    health:
+      show-details: WHEN_AUTHORIZED
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,refresh,bus-refresh,hystrix.stream
+# ==============================================================
+# = Actuator Info
+# ==============================================================
+info:
+  assistenza:
+    nome: "Cristian Bulgarelli"
+    mail: "cristian.bulgarelli@gmail.com"
+    telefono: "3481234567"
+    orario: "9-18"
+  nome:
+    nome-app: "Promo Web Service"
