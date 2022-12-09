@@ -1,41 +1,40 @@
-server:
-  port: 8761
-  tomcat:
-    threads:
-      max: 5
+# ==============================================================
+# = Eureka Server - Profilo peer2
+# ==============================================================
 
-# ==============================================================
-# = Eureka Parameters
-# ==============================================================
+server:
+  port: 8762
+  tomcat:
+    max-threads: 5
+
+spring:
+  application:
+    name: EurekaServer
 eureka:
   instance:
-    hostname: localhost
-    #Specifica se la registrazione avviene tramite ip
+    hostname: peer2
+    metadataMap:
+      zone: zone2
     preferIpAddress: true
+    instanceId: ${spring.application.name}-2
   # ==============================================================
   # = Impostazione Server
   # ==============================================================
   server:
-    # Abilita o disabilita l'auto preservazione
-    enableSelfPreservation: true
-    # Durata (in ms) della cache
-    responseCacheUpdateIntervalMs: 60000
-    # Tempo di attesa in ms di deregistrazione del servizio (def 60000)
+    #Abilita o disabilita l'auto preservazione
+    enableSelfPreservation: false
+    #Durata (in ms) della cache
+    responseCacheUpdateIntervalMs: 30000
+    #Tempo di attesa in ms di deregistrazione del servizio (def 60000)
     evictionIntervalTimerInMs: 30000
-    # Tempo di attesa (in secondi) prima di accettare richieste
+    #Tempo di attesa (in secondi) prima di accettare richieste
     waitTimeInMsWhenSyncEmpty: 5
-    # timeout di connessione al peer
-    peer-node-read-timeout-ms: 500
   # ==============================================================
   # = Impostazione Client
   # ==============================================================
   client:
-    # Un Servizio Eureka è escluso dalla registrazione in Eureka
-    registerWithEureka: false
-    # Non esegue la cache in locale
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://user:BimBumBam_2018@localhost:8761/eureka/}
+      defaultZone:  http://user:BimBumBam_2018@localhost:8761/eureka/,http://user:BimBumBam_2018@localhost:8763/eureka/
 
 sicurezza:
   userpwd: ${uspwd}
