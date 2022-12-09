@@ -1,5 +1,5 @@
 # ==============================================================
-# = Promo Prezzi Web Service - Versione Test
+# = Promo Prezzi Web Service - Versione Produzione
 # ==============================================================
 server:
   #port: 5091
@@ -98,7 +98,7 @@ info:
     telefono: "348-12345678"
     orario: "8-18"
   nome:
-    nome-app: "Promo Prezzi Web Service - Versione Test con configurazione esternalizzata su config server"
+    nome-app: "Promo Prezzi Web Service - Versione Produzione con configurazione esternalizzata su config server"
 
 # ==============================================================
 # = Proprietà Livello Log

@@ -1,9 +1,9 @@
 # ==============================================================
-# = Promo Prezzi Web Service - Versione Test
+# = Products Web Service - Versione Test
 # ==============================================================
 server:
-  #port: 5091
-  port: 509${seq}
+  #port: 5051
+  port: 505${seq}
 
 spring:
   cache:
@@ -98,7 +98,7 @@ info:
     telefono: "348-12345678"
     orario: "8-18"
   nome:
-    nome-app: "Promo Prezzi Web Service - Versione Test con configurazione esternalizzata su config server"
+    nome-app: "Products Web Service - Versione Test con configurazione esternalizzata su config server"
 
 # ==============================================================
 # = Proprietà Livello Log
@@ -107,7 +107,7 @@ info:
 # ==============================================================
 logging:
   file:
-    name: "/home/cristian/tmp/Udemy/spring-cloud-course/logs/PrezziPromoSrv.log"
+    name: "/home/cristian/tmp/Udemy/spring-cloud-course/logs/ArtSrv.log"
   pattern:
     file: "%d{ dd-MM-yyyy HH:mm:ss.SSS } [%thread] %-5level %logger{36} - %msg%n"
     #    console: "%d{dd-MM-yyyy HH:mm:ss} - %msg%n"
