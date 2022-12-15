@@ -93,9 +93,13 @@ spring:
           predicates:
             - Path=/api/listino/**
         - id: authModule
-          uri: lb://AUTH-SERVICE
+          uri: lb://AuthServerJwt
           predicates:
             - Path=/auth/**
+        - id: authRefreshModule
+          uri: lb://AuthServerJwt
+          predicates:
+            - Path=/refresh/**
         - id: cachePromoModule
           uri: lb://PromoPrezziWebService
           predicates:

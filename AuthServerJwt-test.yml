@@ -1,0 +1,82 @@
+# ==============================================================
+# = Auth Server JWT - Versione Test
+# ==============================================================
+server:
+  #port: 9100
+  port: 910${seq}
+
+# ==============================================================
+# = Parametri Servizio gestUser
+# ==============================================================
+gestuser:
+  srvUrl: http://localhost:8019/api/utenti/cerca/userid/
+  userId: Cristian
+  password: 123Stella
+
+# ==============================================================
+# = Parametri Sicurezza JWT
+# ==============================================================
+sicurezza:
+  uri: /auth
+  refresh: /refresh
+  header: Authorization
+  prefix: Bearer
+  expiration: 300
+  secret: $123_Stella@xantrix.it
+
+# ==============================================================
+# = Proprietà Livello Log
+# = Default ERROR, WARN e INFO
+# = Levels: TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+# ==============================================================
+logging:
+  file:
+    name: "/home/cristian/tmp/Udemy/spring-cloud-course/logs/AuthSrvJwt-${seq}.log"
+  pattern:
+    file: "%d{ dd-MM-yyyy HH:mm:ss.SSS } [%thread] %-5level %logger{36} - %msg%n"
+    #    console: "%d{dd-MM-yyyy HH:mm:ss} - %msg%n"
+    console: "%d{dd.MM.yyyy HH:mm:ss.SSS} %-5p - [%C]:%m%n"
+
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+  # Livello del log generale
+  level:
+    root: WARN
+    io:
+      github:
+        resilience4j: DEBUG
+    org:
+      springframework:
+        cloud: DEBUG
+        security: DEBUG
+
+# ==============================================================
+# = Eureka Properties
+# = Nota: prima di attivare il servizio servono tre heartbeat
+# ==============================================================
+eureka:
+  # ==============================================================
+  # = Impostazioni Instance
+  # ==============================================================
+  instance:
+    # intervallo di attesa prima della rimozione del servizio (def 90 sec)
+    lease-expiration-duration-in-seconds: 60
+    # intervallo di invio dell'heartbeat (def 30 sec)
+    leaseRenewalIntervalInSeconds: 15
+    # id di identificazione dell'istanza
+    instanceId: ${server.port}-${spring.application.name}-${seq}
+    #instanceId: ${server.port}-${spring.application.name}
+    # registrazione per indirizzo ip (defualt hostname)
+    preferIpAddress: true
+  # ==============================================================
+  # = Impostazioni Client
+  # ==============================================================
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      # BimBumBam_2018: password specified in the eurekasrv => application.yml => sicurezza.userpwd parameter (decoded value is BimBumBam_2018)
+      defaultZone: ${EUREKA_URL_1:http://user:BimBumBam_2018@localhost:8761/eureka/},${EUREKA_URL_2:http://user:BimBumBam_2018@localhost:8762/eureka/},${EUREKA_URL_3:http://user:BimBumBam_2018@localhost:8763/eureka/}
+    # time out di connessione in secondi al server Eureka (def 5 sec)
+    eureka-server-connect-timeout-seconds: 8
