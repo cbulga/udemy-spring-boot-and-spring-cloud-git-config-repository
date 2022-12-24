@@ -28,10 +28,6 @@ spring:
           type: elastic
           max-idle-time: 15s
           max-life-time: 60s
-      filter:
-        ignored-headers:
-          - Access-Control-Allow-Credentials
-          - Access-Control-Allow-Origin
       default-filters:
         - name: RequestRateLimiter
           args:
